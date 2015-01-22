@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FVCustomAlertView_Swift_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH0-HM-EaA">
+                                <rect key="frame" x="233" y="54" width="135" height="30"/>
+                                <state key="normal" title="Show Loading Alert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLoading:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zyp-b6-v6K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELW-Ds-0Aj">
+                                <rect key="frame" x="242" y="104" width="116" height="30"/>
+                                <state key="normal" title="Show Done Alert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDone:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OJe-6T-UA7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfH-X8-khO">
+                                <rect key="frame" x="232" y="204" width="136" height="30"/>
+                                <state key="normal" title="Show Warning Alert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWarning:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lY9-fn-107"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JF-kJ-rjE">
+                                <rect key="frame" x="244" y="155" width="113" height="30"/>
+                                <state key="normal" title="Show Error Alert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showError:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZRy-9O-w1d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ELW-Ds-0Aj" firstAttribute="top" secondItem="dH0-HM-EaA" secondAttribute="bottom" constant="32" id="3Nf-nh-Hcb">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="7JF-kJ-rjE" secondAttribute="centerX" id="61Y-vC-SWy"/>
+                            <constraint firstAttribute="centerX" secondItem="dH0-HM-EaA" secondAttribute="centerX" id="CDL-w9-kc5"/>
+                            <constraint firstItem="7JF-kJ-rjE" firstAttribute="top" secondItem="ELW-Ds-0Aj" secondAttribute="bottom" constant="35" id="THx-lC-Lme">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="VfH-X8-khO" secondAttribute="centerX" id="fvJ-Ba-02u"/>
+                            <constraint firstItem="VfH-X8-khO" firstAttribute="top" secondItem="7JF-kJ-rjE" secondAttribute="bottom" constant="8" id="kfA-zY-eXp">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="ELW-Ds-0Aj" secondAttribute="centerX" id="u2Y-Mt-vbD"/>
+                            <constraint firstItem="dH0-HM-EaA" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="x6o-qR-8Y5">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CDL-w9-kc5"/>
+                                <exclude reference="x6o-qR-8Y5"/>
+                                <exclude reference="3Nf-nh-Hcb"/>
+                                <exclude reference="u2Y-Mt-vbD"/>
+                                <exclude reference="61Y-vC-SWy"/>
+                                <exclude reference="THx-lC-Lme"/>
+                                <exclude reference="fvJ-Ba-02u"/>
+                                <exclude reference="kfA-zY-eXp"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="CDL-w9-kc5"/>
+                                <include reference="x6o-qR-8Y5"/>
+                                <include reference="3Nf-nh-Hcb"/>
+                                <include reference="u2Y-Mt-vbD"/>
+                                <include reference="61Y-vC-SWy"/>
+                                <include reference="THx-lC-Lme"/>
+                                <include reference="fvJ-Ba-02u"/>
+                                <include reference="kfA-zY-eXp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="315.75"/>
+        </scene>
+    </scenes>
+</document>
