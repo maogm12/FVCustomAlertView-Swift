@@ -477,6 +477,7 @@
 				3F69988D1A712A8300BBFC8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F69988E1A712A8300BBFC8E /* Build configuration list for PBXNativeTarget "FVCustomAlertView-Swift-ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +486,7 @@
 				3F6998901A712A8300BBFC8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
