@@ -35,11 +35,15 @@ The default modes are : (make sure you try them in the example app)
 
 * Loading
 
+![Loading](./Screenshots/loading.png)
+
 ```swift
 FVCustomAlertView.shareInstance.showDefaultLoadingAlertOnView(self.view, withTitle: "Loading...")
 ```
 
 * Done
+
+![done](./Screenshots/done.png)
 
 ```swift
 FVCustomAlertView.shareInstance.showDefaultDoneAlertOnView(self.view, withTitle: "Done")
@@ -47,11 +51,15 @@ FVCustomAlertView.shareInstance.showDefaultDoneAlertOnView(self.view, withTitle:
 
 * Error
 
+![error](./Screenshots/error.png)
+
 ```swift
 FVCustomAlertView.shareInstance.showDefaultErrorAlertOnView(self.view, withTitle: "Error")
 ```
 
 * Warning
+
+![warning](./Screenshots/warning.png)
 
 ```swift
 FVCustomAlertView.shareInstance.showDefaultWarningAlertOnView(self.view, withTitle: "Be careful")
@@ -64,9 +72,9 @@ Sorry, I do not add that in the example project, but it's supported!!!
 
 ## Author
 
-Garnel Mao
-maogm12 [AT] gmail.com
-maogm.com
+Garnel Mao (maogm12@gmail.com)
+
+[http://maogm.com](http://maogm.com)
 
 ## License
 
