@@ -32,7 +32,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showError(sender: AnyObject) {
-        FVCustomAlertView.shareInstance.showDefaultErrorAlertOnView(self.view, withTitle: "Error")
+        FVCustomAlertView.shareInstance.showDefaultErrorAlertOnView(self.view, withTitle: "Error",
+            withSize: CGSizeMake(200, 100))
     }
 
     @IBAction func showWarning(sender: AnyObject) {

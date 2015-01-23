@@ -188,6 +188,22 @@ public class FVCustomAlertView: UIView {
         self.showAlertOnView(view, withTitle: title, titleColor: UIColor.whiteColor(), width: 100.0, height: 100.0, backgroundImage: nil, backgroundColor: UIColor.blackColor(), cornerRadius: 10.0, shadowAlpha: 0.1, alpha: 0.8, contentView: nil, type: .Warning)
     }
 
+    public func showDefaultLoadingAlertOnView(view: UIView, withTitle title: String, withSize size: CGSize) {
+        self.showAlertOnView(view, withTitle: title, titleColor: UIColor.whiteColor(), width: size.width, height: size.height, backgroundImage: nil, backgroundColor: UIColor.blackColor(), cornerRadius: 10.0, shadowAlpha: 0.1, alpha: 0.8, contentView: nil, type: .Loading)
+    }
+
+    public func showDefaultDoneAlertOnView(view: UIView, withTitle title: String, withSize size: CGSize) {
+        self.showAlertOnView(view, withTitle: title, titleColor: UIColor.whiteColor(), width: size.width, height: size.height, backgroundImage: nil, backgroundColor: UIColor.blackColor(), cornerRadius: 10.0, shadowAlpha: 0.1, alpha: 0.8, contentView: nil, type: .Done)
+    }
+
+    public func showDefaultErrorAlertOnView(view: UIView, withTitle title: String, withSize size: CGSize) {
+        self.showAlertOnView(view, withTitle: title, titleColor: UIColor.whiteColor(), width: size.width, height: size.height, backgroundImage: nil, backgroundColor: UIColor.blackColor(), cornerRadius: 10.0, shadowAlpha: 0.1, alpha: 0.8, contentView: nil, type: .Error)
+    }
+
+    public func showDefaultWarningAlertOnView(view: UIView, withTitle title: String, withSize size: CGSize) {
+        self.showAlertOnView(view, withTitle: title, titleColor: UIColor.whiteColor(), width: size.width, height: size.height, backgroundImage: nil, backgroundColor: UIColor.blackColor(), cornerRadius: 10.0, shadowAlpha: 0.1, alpha: 0.8, contentView: nil, type: .Warning)
+    }
+
     public func contentViewFromType(type: FVAlertType) -> UIView {
         let content = UIImageView()
         // generate default content view based on the type of the alert

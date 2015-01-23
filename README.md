@@ -55,7 +55,7 @@ FVCustomAlertView.shareInstance.showDefaultDoneAlertOnView(self.view, withTitle:
 ![error](./Screenshots/error.png)
 
 ```swift
-FVCustomAlertView.shareInstance.showDefaultErrorAlertOnView(self.view, withTitle: "Error")
+FVCustomAlertView.shareInstance.showDefaultErrorAlertOnView(self.view, withTitle: "Error", withSize: CGSizeMake(width: 200, height: 100))
 ```
 
 * Warning
@@ -78,6 +78,10 @@ let sw = UISwitch()
 sw.on = true
 FVCustomAlertView.shareInstance.showAlertOnView(self.view, withTitle: "1 + 1 = 2 ?", titleColor: UIColor.blackColor(), width: 200, height: 150, backgroundImage: nil, backgroundColor: UIColor.orangeColor(), cornerRadius: 5, shadowAlpha: 0.1, alpha: 0.9, contentView: sw, type: .Custom)
 ```
+
+## Resources
+
+The resources (checkmark, cross, warning sign) comes from [http://www.iconfont.cn/](http://www.iconfont.cn/)
 
 ## Author
 
