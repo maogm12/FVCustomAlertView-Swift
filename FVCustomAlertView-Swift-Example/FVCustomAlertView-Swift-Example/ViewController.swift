@@ -34,6 +34,13 @@ class ViewController: UIViewController {
     @IBAction func showError(sender: AnyObject) {
         FVCustomAlertView.shareInstance.showDefaultErrorAlertOnView(self.view, withTitle: "Error",
             withSize: CGSizeMake(200, 100))
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            NSThread.sleepForTimeInterval(2)
+            dispatch_async(dispatch_get_main_queue(), {
+                FVCustomAlertView.shareInstance.showDefaultErrorAlertOnView(self.view, withTitle: "Another",
+                    withSize: CGSizeMake(150, 150))
+            });
+        });
     }
 
     @IBAction func showWarning(sender: AnyObject) {

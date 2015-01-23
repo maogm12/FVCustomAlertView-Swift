@@ -95,8 +95,14 @@ public class FVCustomAlertView: UIView {
     }
 
     public func showAlertOnView(view: UIView, withTitle title: String?, titleColor: UIColor, width: CGFloat, height: CGFloat, backgroundImage: UIImage?, backgroundColor: UIColor?, cornerRadius: CGFloat, shadowAlpha: CGFloat, alpha: CGFloat, contentView: UIView?, type: FVAlertType) {
+        // hide current alertView first
+        if currentView != nil {
+            // must be false
+            hideAlertFromView(currentView, fading: false)
+        }
+
+        // the view is not added to a window yet
         if view.window == nil {
-            // the view is not added to a window yet
             return
         }
 
