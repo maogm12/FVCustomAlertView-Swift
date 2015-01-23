@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH0-HM-EaA">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH0-HM-EaA">
                                 <rect key="frame" x="233" y="54" width="135" height="30"/>
                                 <state key="normal" title="Show Loading Alert">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,7 +26,7 @@
                                     <action selector="showLoading:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zyp-b6-v6K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELW-Ds-0Aj">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELW-Ds-0Aj">
                                 <rect key="frame" x="242" y="104" width="116" height="30"/>
                                 <state key="normal" title="Show Done Alert">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,7 +35,7 @@
                                     <action selector="showDone:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OJe-6T-UA7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfH-X8-khO">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfH-X8-khO">
                                 <rect key="frame" x="232" y="204" width="136" height="30"/>
                                 <state key="normal" title="Show Warning Alert">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,7 +44,7 @@
                                     <action selector="showWarning:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lY9-fn-107"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JF-kJ-rjE">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JF-kJ-rjE">
                                 <rect key="frame" x="244" y="155" width="113" height="30"/>
                                 <state key="normal" title="Show Error Alert">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,9 +53,22 @@
                                     <action selector="showError:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZRy-9O-w1d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izd-oX-1q6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Show Custom Alert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSwitch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zyV-oc-h7h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="izd-oX-1q6" secondAttribute="centerX" id="1bc-xm-vo9"/>
+                            <constraint firstItem="izd-oX-1q6" firstAttribute="top" secondItem="VfH-X8-khO" secondAttribute="bottom" constant="28" id="2Ed-iP-gYL">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="ELW-Ds-0Aj" firstAttribute="top" secondItem="dH0-HM-EaA" secondAttribute="bottom" constant="32" id="3Nf-nh-Hcb">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
@@ -74,7 +87,12 @@
                             </constraint>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="izd-oX-1q6"/>
+                            </mask>
                             <mask key="constraints">
+                                <exclude reference="1bc-xm-vo9"/>
+                                <exclude reference="2Ed-iP-gYL"/>
                                 <exclude reference="CDL-w9-kc5"/>
                                 <exclude reference="x6o-qR-8Y5"/>
                                 <exclude reference="3Nf-nh-Hcb"/>
@@ -86,7 +104,12 @@
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="izd-oX-1q6"/>
+                            </mask>
                             <mask key="constraints">
+                                <include reference="1bc-xm-vo9"/>
+                                <include reference="2Ed-iP-gYL"/>
                                 <include reference="CDL-w9-kc5"/>
                                 <include reference="x6o-qR-8Y5"/>
                                 <include reference="3Nf-nh-Hcb"/>

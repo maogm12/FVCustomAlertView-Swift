@@ -15,6 +15,7 @@ To run the example project, clone the repo, open `FVCustomAlertView-Swift.xcwork
 
 * Remove blur to support iOS7, you can use the objective version to get that
 * Add a thread-safe share singleton
+* Add alertView to view's window to get fullscreen effect
 
 ## How to install FVCustomAlertView
 
@@ -68,7 +69,15 @@ FVCustomAlertView.shareInstance.showDefaultWarningAlertOnView(self.view, withTit
 * Custom
 
 
-Sorry, I do not add that in the example project, but it's supported!!!
+![custom](./Screenshots/custom.png)
+
+Let's add a `UISwitch`:
+
+```swift
+let sw = UISwitch()
+sw.on = true
+FVCustomAlertView.shareInstance.showAlertOnView(self.view, withTitle: "1 + 1 = 2 ?", titleColor: UIColor.blackColor(), width: 200, height: 150, backgroundImage: nil, backgroundColor: UIColor.orangeColor(), cornerRadius: 5, shadowAlpha: 0.1, alpha: 0.9, contentView: sw, type: .Custom)
+```
 
 ## Author
 

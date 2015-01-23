@@ -38,5 +38,11 @@ class ViewController: UIViewController {
     @IBAction func showWarning(sender: AnyObject) {
         FVCustomAlertView.shareInstance.showDefaultWarningAlertOnView(self.view, withTitle: "Warning")
     }
+
+    @IBAction func showSwitch(sender: AnyObject) {
+        let sw = UISwitch()
+        sw.on = true
+        FVCustomAlertView.shareInstance.showAlertOnView(self.view, withTitle: "1 + 1 = 2 ?", titleColor: UIColor.blackColor(), width: 200, height: 150, backgroundImage: nil, backgroundColor: UIColor.orangeColor(), cornerRadius: 5, shadowAlpha: 0.1, alpha: 0.9, contentView: sw, type: .Custom)
+    }
 }
 

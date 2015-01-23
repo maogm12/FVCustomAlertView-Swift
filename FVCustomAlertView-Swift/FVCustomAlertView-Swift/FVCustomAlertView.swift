@@ -55,8 +55,8 @@ public enum FVAlertType {
 */
 public class FVCustomAlertView: UIView {
     /**
-    Use singleton pattern to hold the share instance
-    see more: http://code.martinrue.com/posts/the-singleton-pattern-in-swift
+    * Use singleton pattern to hold the share instance
+    * see more: http://code.martinrue.com/posts/the-singleton-pattern-in-swift
     */
     class var shareInstance: FVCustomAlertView {
         struct Static {
@@ -81,16 +81,25 @@ public class FVCustomAlertView: UIView {
     private var _currentView: UIView?
 
     /**
-    Getter to the current FVCustomAlertView displayed
-    If no alert view is displayed on the screen, the result will be nil
+    * Getter to the current FVCustomAlertView displayed
+    * If no alert view is displayed on the screen, the result will be nil
     */
-    public var currentView: UIView? {
+    public private(set) var currentView: UIView? {
         get {
             return _currentView
+        }
+
+        set {
+            _currentView = newValue
         }
     }
 
     public func showAlertOnView(view: UIView, withTitle title: String?, titleColor: UIColor, width: CGFloat, height: CGFloat, backgroundImage: UIImage?, backgroundColor: UIColor?, cornerRadius: CGFloat, shadowAlpha: CGFloat, alpha: CGFloat, contentView: UIView?, type: FVAlertType) {
+        if view.window == nil {
+            // the view is not added to a window yet
+            return
+        }
+
         if view.viewWithTag(kFinalViewTag) != nil {
             println("Can't add two FVCustomAlertViews on the same view. Hide the current view first.")
             return
@@ -158,8 +167,9 @@ public class FVCustomAlertView: UIView {
         tapGesture.numberOfTouchesRequired = 1
         resultView.addGestureRecognizer(tapGesture)
 
-        view.addSubview(resultView)
-        _currentView = view
+        // use view's window to let result view cover fullscreen
+        view.window?.addSubview(resultView)
+        currentView = view
     }
 
     public func showDefaultLoadingAlertOnView(view: UIView, withTitle title: String) {
@@ -214,22 +224,24 @@ public class FVCustomAlertView: UIView {
     }
 
     public func hideAlertFromView(view: UIView?, fading: Bool) {
+        let alertView = view?.window?.viewWithTag(kFinalViewTag)
         if fading {
-            fadeOutView(view!.viewWithTag(kFinalViewTag),
-                completion: { (finished) in
-                    view?.viewWithTag(self.kFinalViewTag)?.removeFromSuperview()
-                    return
+            fadeOutView(alertView, completion: { (finished) in
+                alertView?.removeFromSuperview()
+                return
             })
         } else {
-            view?.viewWithTag(kFinalViewTag)?.removeFromSuperview()
+            alertView?.removeFromSuperview()
         }
-        _currentView = nil
+
+        // TODO maybe check view is currentView
+        currentView = nil
     }
 
     public func hideAlertByTap(sender: UITapGestureRecognizer) {
         self.fadeOutView(sender.view, completion: {(finished) in
             sender.view?.viewWithTag(self.kFinalViewTag)?.removeFromSuperview()
-            self._currentView = nil
+            self.currentView = nil
         })
     }
 }
